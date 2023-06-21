@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "easyble?ref=iosexample.com",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Nickolans/EasyBLE?ref=iosexample.com",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6f5f6c63de1c2b88f3fca0d96a981236c6d5dd88"
+      }
+    },
+    {
+      "identity" : "easystash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onmyway133/EasyStash",
+      "state" : {
+        "revision" : "c7230d65d4c2c143ac395e870a7b2bd8cf0c139e",
+        "version" : "1.1.8"
+      }
+    }
+  ],
+  "version" : 2
+}
