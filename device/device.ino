@@ -30,14 +30,11 @@ void setup() {
 }
 
 void loop() {
-  BLEDevice central = BLE.central();  // Wait for a BLE central to connect
+  BLEDevice central = BLE.central();  
 
-  // if a central is connected to the peripheral:
   if (central) {
     Serial.print("Connected to central MAC: ");
-    // print the central's BT address:
     Serial.println(central.address());
-    // turn on the LED to indicate the connection:
     digitalWrite(LED_BUILTIN, HIGH);
 
     while (central.connected()){
@@ -45,9 +42,8 @@ void loop() {
       Serial.println(String(HS300x.readTemperature()));
       temperatureChar.writeValue(String(HS300x.readTemperature()));
       delay(1000);
-    } // keep looping while connected
-
-    // when the central disconnects, turn off the LED:
+    } 
+    
     digitalWrite(LED_BUILTIN, LOW);
     Serial.print("Disconnected from central MAC: ");
     Serial.println(central.address());
