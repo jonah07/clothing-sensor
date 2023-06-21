@@ -1,17 +1,15 @@
 #include <ArduinoBLE.h>
 #include <HS300x.h>
 
-static const char* greeting = "Hello World!";
+BLEService sensorService("7863080E-F4FB-4BA1-8821-E68CC5BC4B4F");  
 
-BLEService sensorService("7863080E-F4FB-4BA1-8821-E68CC5BC4B4F");  // User defined service
-
-BLEStringCharacteristic temperatureChar("07565F0D-E201-46A8-A719-69550282265A", BLERead | BLENotify, 25); // remote clients will only be able to read this
+BLEStringCharacteristic temperatureChar("07565F0D-E201-46A8-A719-69550282265A", BLERead | BLENotify, 25);
 
 void setup() {
-  Serial.begin(9600);    // initialize serial communication
+  Serial.begin(9600);   
   while (!Serial);
 
-  pinMode(LED_BUILTIN, OUTPUT); // initialize the built-in LED pin
+  pinMode(LED_BUILTIN, OUTPUT);
 
   HS300x.begin();
   if (!BLE.begin()) {   // initialize BLE
